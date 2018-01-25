@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Fairy.Models.Book>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@foreach (var book in Model)
+{
+    <h1>@book.Name</h1>
+    <h1>@book.NumberAvailable</h1>
+
+}
+
