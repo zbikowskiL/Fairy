@@ -17,6 +17,7 @@ namespace Fairy.Models
         public bool IsSubscribedToNewsletter { get; set; }
         public MembershipType MembershipType { get; set; }
         public int MembershipTypeId { get; set; }
+        public DateTime? BrithDate  { get; set; }
 
 
 

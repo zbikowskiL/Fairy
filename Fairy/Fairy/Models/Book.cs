@@ -10,7 +10,7 @@ namespace Fairy.Models
     public class Book
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [Required]
         [StringLength(255)]

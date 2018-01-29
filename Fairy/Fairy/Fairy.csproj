@@ -205,6 +205,18 @@
     <Compile Include="Migrations\201801252251035_UpdateModels.Designer.cs">
       <DependentUpon>201801252251035_UpdateModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801291741450_AddnameInMembershipType.cs" />
+    <Compile Include="Migrations\201801291741450_AddnameInMembershipType.Designer.cs">
+      <DependentUpon>201801291741450_AddnameInMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801291742558_SetNameMembershipTypes.cs" />
+    <Compile Include="Migrations\201801291742558_SetNameMembershipTypes.Designer.cs">
+      <DependentUpon>201801291742558_SetNameMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801291808174_AddBrithdate.cs" />
+    <Compile Include="Migrations\201801291808174_AddBrithdate.Designer.cs">
+      <DependentUpon>201801291808174_AddBrithdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -302,6 +314,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801252251035_UpdateModels.resx">
       <DependentUpon>201801252251035_UpdateModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801291741450_AddnameInMembershipType.resx">
+      <DependentUpon>201801291741450_AddnameInMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801291742558_SetNameMembershipTypes.resx">
+      <DependentUpon>201801291742558_SetNameMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801291808174_AddBrithdate.resx">
+      <DependentUpon>201801291808174_AddBrithdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -23,7 +23,7 @@ namespace Fairy.Controllers
         // GET: Books
         public ActionResult Index()
         {
-            //var books = _context.Books.ToList();
+            var books = _context.Books.ToList();
 
             return View();
         }
