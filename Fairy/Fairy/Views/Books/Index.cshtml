@@ -1,15 +1,33 @@
 ﻿@model IEnumerable<Fairy.Models.Book>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Books</h2>
 
-@foreach (var book in Model)
+@if (!Model.Any())
 {
-    <h1>@book.Name</h1>
-    <h1>@book.NumberAvailable</h1>
-
+    <p>We don't have any books yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Book</th> <th>Genre</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(book.Name, "Details", "Books", new { id = book.Id } , null)</td>
+                    <td>@book.Genre.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 
