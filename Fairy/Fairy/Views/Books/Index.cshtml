@@ -6,6 +6,10 @@
 }
 
 <h2>Books</h2>
+@using (Html.BeginForm("New" , "Books"))
+{
+    <button type="submit" class="btn btn-primary">New Book</button>
+}
 
 @if (!Model.Any())
 {
@@ -23,7 +27,7 @@ else
             @foreach (var book in Model)
             {
                 <tr>
-                    <td>@Html.ActionLink(book.Name, "Details", "Books", new { id = book.Id } , null)</td>
+                    <td>@Html.ActionLink(book.Name, "Edit", "Books", new { id = book.Id }, null)</td>
                     <td>@book.Genre.Name</td>
                 </tr>
             }

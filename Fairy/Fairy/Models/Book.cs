@@ -14,14 +14,19 @@ namespace Fairy.Models
 
         [Required]
         [StringLength(255)]
+        [Display(Name = "Name")]
         public string Name { get; set; }
 
         public Genre Genre { get; set; }
 
+        [Display(Name ="Genre")]
+        [Required]
         public int GenreId { get; set; }
+        [Display(Name = "Add Date")]
         public DateTime DateAdded { get; set; }
+        [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
-
+        [Display(Name = "Number in Stock")]
         public int NumberInStock { get; set; }
         public int NumberAvailable { get; set; }
 
