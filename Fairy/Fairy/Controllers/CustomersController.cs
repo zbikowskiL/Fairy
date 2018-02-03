@@ -49,14 +49,27 @@ namespace Fairy.Controllers
 
             var ViewModel = new CustomerFormViewModel()
             {
+                Customer = new Customer(),
                 MembershipTypes = membershipType
             };
             return View("CustomerForm", ViewModel);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                var ViewModel = new CustomerFormViewModel
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+
+                return View("CustomerForm", ViewModel);
+            }
+
             if (customer.Id == 0)
             {
                 _context.Customers.Add(customer);

@@ -8,21 +8,25 @@
 
 @using (Html.BeginForm("Save", "Customers"))
 {
-    @Html.HiddenFor(m => m.Customer.Id);
-
+    @Html.HiddenFor(m => m.Customer.Id)
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "Please fix following errors.")
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)
         @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(m => m.Customer.BrithDate)
-        @Html.TextBoxFor(m => m.Customer.BrithDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Name)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.MembershipTypeId)
         @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
     </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.BrithDate)
+        @Html.TextBoxFor(m => m.Customer.BrithDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.BrithDate)
+    </div>
+
     <div class="checkbox">
         <label>
             @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter) Subscribed to Newsletter ?
@@ -34,4 +38,9 @@
 @using (Html.BeginForm("Index", "Customers"))
 {
     <button type="submit" class="btn btn-primary">Back</button>
+}
+
+@section scripts
+ {
+    @Scripts.Render("~/bundles/jqueryval")
 }
