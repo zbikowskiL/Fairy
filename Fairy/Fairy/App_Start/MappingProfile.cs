@@ -13,7 +13,11 @@ namespace Fairy.App_Start
         public MappingProfile()
         {
             Mapper.CreateMap<Customer, CustomerDTO>();
+            Mapper.CreateMap<MembershipType, MembershipTypeDTO>();
+
+
             Mapper.CreateMap<CustomerDTO, Customer>();
+
         }
     }
 }

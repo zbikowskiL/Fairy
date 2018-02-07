@@ -2,6 +2,7 @@
 using Fairy.DTOmodels;
 using Fairy.Models;
 using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -20,9 +21,14 @@ namespace Fairy.Controllers.ApiControllers
         }
 
         // GET api/customers
-        public IEnumerable<CustomerDTO> GetAllCustomers()
+        public IHttpActionResult GetAllCustomers()
         {
-            return _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDTO>);               
+            var customerDTO = _context.Customers
+                .Include(c => c.MembershipType)
+                .ToList()
+                .Select(Mapper.Map<Customer,CustomerDTO>);
+
+            return Ok(customerDTO);
         }
 
         // GET api/customers/1
