@@ -8,7 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace Fairy.Controllers
-{
+{   
+    
     public class CustomersController : Controller
     {
         private ApplicationDbContext _context;

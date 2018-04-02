@@ -42,7 +42,7 @@ namespace Fairy.Controllers.ApiControllers
             return Ok(Mapper.Map<Customer, CustomerDTO>(customer));
         }
 
-        //POST api/customers
+        //POST api/customers/create/
         [HttpPost]
         public IHttpActionResult CreateCustomer(CustomerDTO customerDTO)
         {
@@ -58,7 +58,7 @@ namespace Fairy.Controllers.ApiControllers
             return Created(new Uri(Request.RequestUri + "/" + customer.Id), customerDTO);
         }
 
-        //PUT api/customers/1
+        //PUT api/customers/update/
         [HttpPut]
         public void UpdateCustomer(int id, CustomerDTO customerDTO)
         {
@@ -75,7 +75,7 @@ namespace Fairy.Controllers.ApiControllers
             _context.SaveChanges();
         }
 
-        //DELETE api/customers/1
+        //DELETE api/customers/delete/
         [HttpDelete]
         public void DeleteCustomer(int id)
         {
